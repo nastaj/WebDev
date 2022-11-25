@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  width: 870px;
+  margin: 50px auto;
+}
+
+article {
+  border: 4px solid black;
+}
+
+h1 {
+  text-align: center;
+  background-color: #f4f4f4;
+  text-transform: uppercase;
+  padding: 15px;
+  position: relative;
+}
+
+h1::before {
+  content: "sale";
+  font-size: 16px;
+  background-color: #f03e3e;
+  color: #ffffff;
+  padding: 5px 25px;
+  position: absolute;
+  top: -20px;
+  left: -55px;
+  letter-spacing: 3px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-size: 24px;
+}
+
+.article-free {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+a:link,
+a:visited {
+  color: black;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type: square;
+  margin-bottom: 10px;
+}
+
+button {
+  border: none;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px;
+  border-top: 4px solid black;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.header-colors {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.black,
+.blue,
+.red,
+.yellow,
+.green,
+.brown {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.blue {
+  background-color: #228be6;
+}
+
+.red {
+  background-color: #e03131;
+}
+
+.yellow {
+  background-color: #fcc419;
+}
+
+.green {
+  background-color: #40c057;
+}
+
+.brown {
+  background-color: #78350f;
+}
+
+.img {
+  float: left;
+  width: 240px;
+  margin-right: 30px;
+  margin-bottom: -5.5px;
+}
+
+.article {
+  float: left;
+  width: 270px;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+.product-details {
+  float: left;
+  width: 240px;
+  margin-top: 15px;
+}
+
+.article-free {
+  float: right;
+  font-size: 12px;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+
+.price {
+  display: inline-block;
+}
+
+button {
+  clear: both;
+}
