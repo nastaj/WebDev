@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+article {
+  border: 4px solid black;
+}
+
+h1 {
+  text-align: center;
+  background-color: #f4f4f4;
+  text-transform: uppercase;
+  padding: 15px;
+  position: relative;
+}
+
+h1::before {
+  content: "sale";
+  font-size: 16px;
+  background-color: #f03e3e;
+  color: #ffffff;
+  padding: 5px 25px;
+  position: absolute;
+  top: -20px;
+  left: -55px;
+  letter-spacing: 3px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-size: 24px;
+}
+
+.article-free {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+a:link,
+a:visited {
+  color: black;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type: square;
+  margin-bottom: 10px;
+}
+
+button {
+  border: none;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px;
+  border-top: 4px solid black;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.black,
+.blue,
+.red,
+.yellow,
+.green,
+.brown {
+  width: 30px;
+  height: 30px;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.blue {
+  background-color: #228be6;
+}
+
+.red {
+  background-color: #e03131;
+}
+
+.yellow {
+  background-color: #fcc419;
+}
+
+.green {
+  background-color: #40c057;
+}
+
+.brown {
+  background-color: #78350f;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  column-gap: 30px;
+}
+
+.article-info {
+  grid-column: 1 / -1;
+}
+
+article {
+  width: 862px;
+  margin: 50px auto;
+}
+
+button {
+  grid-column: 1 / -1;
+}
+
+.product-details {
+  align-self: baseline;
+  margin-top: 20px;
+}
+
+.flex-price {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.article-free,
+.price {
+  margin: 0;
+}
+
+.header-colors {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+img {
+  margin-bottom: -6px;
+}
