@@ -73,7 +73,6 @@ h2 {
   font-size: 14px;
   padding: 8px 12px;
 }
-
 /* ------------------------ */
 /* COMPONENT STYLES */
 /* ------------------------ */
@@ -96,6 +95,7 @@ h1 {
   line-height: 1.1;
   letter-spacing: -1px;
   /* 44 / 52 / 62 */
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-text {
@@ -111,6 +111,9 @@ img {
 
 /* FEATURES */
 .features-icon {
+  stroke: #087f5b;
+  width: 32px;
+  margin-bottom: 16px;
 }
 
 .features-title {
@@ -148,6 +151,10 @@ img {
 }
 
 /* CHAIRS */
+.chair {
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.07);
+}
+
 .chair-box {
   padding: 24px;
 }
@@ -174,6 +181,8 @@ h3 {
 }
 
 .chair-icon {
+  stroke: #087f5b;
+  width: 24px;
 }
 
 .chair-price {
