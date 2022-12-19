@@ -26,7 +26,11 @@ Paragraph default: 1.6
 - Primary: #e67e22
 - Tints: #fdf2e9 #fae5d3 #eb984e
 - Shades: #cf711f #45260a
-- Greys: #555 #333 #6f6f6f (lightest gray allowed on #fdf2e9)
+- Greys: #888
+ #555
+ #333
+ #6f6f6f (lightest gray allowed on #fdf2e9)
+ #767676 (lightest gray allowed on #fff)
 
 --- 03 SHADOWS
 
@@ -99,6 +103,10 @@ body {
 
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--center-v {
