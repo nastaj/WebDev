@@ -100,7 +100,6 @@ Privacy & terms
 - How it works
 - Statistics
 - Features
-- Gallery
 - Pricing
 - CTA
 - Footer
