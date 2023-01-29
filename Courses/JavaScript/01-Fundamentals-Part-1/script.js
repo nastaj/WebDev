@@ -64,7 +64,6 @@ job = "teacher";
 // Never create variables without assigning the const or let keyword!
 lastName = 'Nasta';
 console.log(lastName);
-*/
 
 // Math operators
 const now = 2023;
@@ -96,3 +95,19 @@ const isFullAge = ageMom >= 18;
 console.log(isFullAge);
 
 console.log(now - 2002 > now - 1970);
+*/
+
+const now = 2023;
+const ageJakub = now - 2002;
+const ageMom = now - 1970;
+
+console.log(now - 2002 > now - 1970);
+
+console.log(25 - 10 - 5);
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageJakub + ageMom) / 2;
+console.log(ageJakub, ageMom, averageAge);
