@@ -27,7 +27,7 @@ let job2 = "teacher";
 
 console.log(myFirstJob);
 console.log(firstName + " " + surname);
-*/
+
 
 true;
 let javascriptIsFun = true;
@@ -50,3 +50,49 @@ console.log(year);
 console.log(typeof year);
 
 console.log(typeof null);
+
+let age = 30;
+age = 31;
+
+const birthYear = 2002;
+// birthYear = 1999;
+
+// const job;
+var job = "programmer";
+job = "teacher";
+
+// Never create variables without assigning the const or let keyword!
+lastName = 'Nasta';
+console.log(lastName);
+*/
+
+// Math operators
+const now = 2023;
+const ageJakub = now - 2002;
+const ageMom = now - 1970;
+console.log(ageJakub, ageMom);
+
+console.log(ageJakub * 2, ageJakub / 10, 2 ** 3);
+// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+
+const firstName = "Jakub";
+const lastName = "Nasta";
+console.log(firstName + " " + lastName);
+
+// Assignment operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4
+x++; // x = x + 1
+x--; // x = x - 1
+x--;
+console.log(x);
+
+// Comparison operators
+console.log(ageJakub > ageMom); // >, <, >=, <==
+console.log(ageMom >= 53);
+
+const isFullAge = ageMom >= 18;
+console.log(isFullAge);
+
+console.log(now - 2002 > now - 1970);
