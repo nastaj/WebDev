@@ -22,7 +22,7 @@ Brand color: #0c8599
 
 An AI-powered cleaning service that is designed to make your life easier. Our team of experts in robotics and AI technology has created a system that utilizes the latest innovations in cleaning technology to provide a comprehensive and efficient cleaning solution.
 
-### VortexAI features
+### Services
 
 Tailored to individual needs: We understand that every customer has unique cleaning needs, which is why we offer customized cleaning plans and flexible scheduling options.
 
@@ -33,7 +33,7 @@ post-construction cleaning
 
 Clean planet, clean life: We use eco-friendly and non-toxic cleaning products to ensure the safety of our customers and the environment.
 
-### How VortexAI works
+### Features
 
 **New wave of clean comfort!**
 
@@ -97,9 +97,9 @@ Privacy & terms
 
 - Logo + Navigation
 - Hero
-- How it works
-- Statistics
 - Features
+- Statistics
+- Services
 - Pricing
 - CTA
 - Footer
