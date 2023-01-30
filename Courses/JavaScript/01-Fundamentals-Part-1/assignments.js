@@ -15,7 +15,7 @@ console.log(population);
 // *****************************
 
 const isIsland = false;
-const language = "Polish";
+const language = "polish";
 console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
@@ -34,6 +34,31 @@ console.log(population);
 console.log(population > 6000000);
 console.log(population < 33000000);
 
-const description =
-  "Poland is in " + continent + " and its 38 milion people speak polish.";
+let description =
+  "Poland is in " +
+  continent +
+  " and its 38 milion people speak " +
+  language +
+  ".";
+// console.log(description);
+
+// *****************************
+// LECTURE: Strings and Template Literals
+// *****************************
+
+description = `${country} is in ${continent}, and its 38 milion people speak ${language}.`;
 console.log(description);
+
+// *****************************
+// LECTURE: Taking Decisions: if / else Statements
+// *****************************
+
+let populationBelowAverage;
+if (population > 33000000) {
+  console.log(`${country}'s population is above average.`);
+} else {
+  populationBelowAverage = 33000000 - population;
+  console.log(
+    `${country}'s population is ${populationBelowAverage} below average.`
+  );
+}
