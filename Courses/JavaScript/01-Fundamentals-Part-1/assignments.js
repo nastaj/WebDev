@@ -62,3 +62,14 @@ if (population > 33000000) {
     `${country}'s population is ${populationBelowAverage} below average.`
   );
 }
+
+// *****************************
+// LECTURE: Type Conversion and Coercion
+// *****************************
+console.log("9" - "5");
+console.log("19" - "13" + "17");
+console.log("19" - "13" + 17);
+console.log("123" < 57);
+console.log(5 + 6 + "4" + 9 - 4 - 2);
+console.log(6 - "4" + "2" + 2 - 3);
+console.log(7 + "4" + 6 + "2" + 3 - 1 - "7");
