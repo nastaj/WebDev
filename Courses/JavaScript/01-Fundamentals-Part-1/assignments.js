@@ -9,6 +9,7 @@ let population = 38000000;
 console.log(country);
 console.log(continent);
 console.log(population);
+console.log("########################");
 
 // *****************************
 // LECTURE: Data Types | let, const and var
@@ -20,6 +21,7 @@ console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
 console.log(typeof language);
+console.log("########################");
 
 // *****************************
 // LECTURE: Basic Operators
@@ -41,6 +43,7 @@ let description =
   language +
   ".";
 // console.log(description);
+console.log("########################");
 
 // *****************************
 // LECTURE: Strings and Template Literals
@@ -48,6 +51,7 @@ let description =
 
 description = `${country} is in ${continent}, and its 38 milion people speak ${language}.`;
 console.log(description);
+console.log("########################");
 
 // *****************************
 // LECTURE: Taking Decisions: if / else Statements
@@ -62,10 +66,12 @@ if (population > 33000000) {
     `${country}'s population is ${populationBelowAverage} below average.`
   );
 }
+console.log("########################");
 
 // *****************************
 // LECTURE: Type Conversion and Coercion
 // *****************************
+
 console.log("9" - "5");
 console.log("19" - "13" + "17");
 console.log("19" - "13" + 17);
@@ -73,3 +79,20 @@ console.log("123" < 57);
 console.log(5 + 6 + "4" + 9 - 4 - 2);
 console.log(6 - "4" + "2" + 2 - 3);
 console.log(7 + "4" + 6 + "2" + 3 - 1 - "7");
+console.log("########################");
+
+// *****************************
+// LECTURE: Equality Operators: == vs. ===
+// *****************************
+
+const numNeighbours = Number(
+  prompt("How many neighbour countries does your country have?")
+);
+
+if (numNeighbours === 1) {
+  console.log("Only 1 border!");
+} else if (numNeighbours > 1) {
+  console.log("More than 1 border");
+} else {
+  console.log("No borders");
+}
