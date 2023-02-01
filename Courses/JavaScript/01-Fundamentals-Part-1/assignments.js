@@ -85,14 +85,57 @@ console.log("########################");
 // LECTURE: Equality Operators: == vs. ===
 // *****************************
 
-const numNeighbours = Number(
-  prompt("How many neighbour countries does your country have?")
-);
+// const numNeighbours = Number(
+//   prompt("How many neighbour countries does your country have?")
+// );
 
-if (numNeighbours === 1) {
-  console.log("Only 1 border!");
-} else if (numNeighbours > 1) {
-  console.log("More than 1 border");
+// if (numNeighbours === 1) {
+//   console.log("Only 1 border!");
+// } else if (numNeighbours > 1) {
+//   console.log("More than 1 border");
+// } else {
+//   console.log("No borders");
+// }
+
+// *****************************
+// LECTURE: Logical Operators
+// *****************************
+
+const isEnglish = language === "english";
+const lessThanFifty = population < 50000000;
+const isNotIsland = !isIsland;
+
+if (isEnglish && lessThanFifty && isNotIsland) {
+  console.log("You should live in Poland :)");
 } else {
-  console.log("No borders");
+  console.log("Poland does not meet your criteria :(");
+}
+console.log("########################");
+
+// *****************************
+// LECTURE: The switch statement
+// *****************************
+
+switch (language) {
+  case "chinese":
+  case "mandarin":
+    console.log("MOST number of native speakers!");
+    break;
+  case "spanish":
+    console.log("2nd place in number of native speakers");
+    break;
+  case "english":
+    console.log("3rd place");
+    break;
+  case "hindi":
+    console.log("Number 4");
+    break;
+  case "arabic":
+    console.log("5th most spoken language");
+    break;
+  case "":
+    console.log("Enter the language!");
+    break;
+  default:
+    console.log("Great language too :D");
 }
