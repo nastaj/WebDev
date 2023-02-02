@@ -35,6 +35,7 @@ Clean planet, clean life: We use eco-friendly and non-toxic cleaning products to
 
 ### Features
 
+_Our Solutions_
 **New wave of clean comfort!**
 
 Advanced AI: Our cleaning robots are equipped with advanced sensors and navigation systems that allow them to navigate even the most complex spaces with ease.
