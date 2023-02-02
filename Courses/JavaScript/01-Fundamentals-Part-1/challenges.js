@@ -39,7 +39,7 @@ if (bmiMark > bmiJohn) {
 } else {
   console.log(`John's BMI (${bmiJohn}) is higher than Mark's (${bmiMark})!`);
 }
-*/
+
 // *************
 // Challenge #3
 // *************
@@ -61,3 +61,18 @@ if (dolphinsAvg > koalasAvg && dolphinsAvg >= 100) {
 } else {
   console.log("It's a draw! Both teams win the trophy");
 }
+*/
+
+// *************
+// Challenge #4
+// *************
+
+const billValue = 275;
+let tip =
+  billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
+
+console.log(
+  `The bill was ${billValue}, the tip was ${tip}, and the total value ${
+    billValue + tip
+  }.`
+);

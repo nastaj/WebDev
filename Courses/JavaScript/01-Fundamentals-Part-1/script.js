@@ -266,7 +266,7 @@ if (hasGoodVision === "y" || hasGoodVision === "yes") {
 } else if (hasGoodVision === "n" || hasGoodVision === "no") {
   hasGoodVision = false;
 }
-*/
+
 
 const day = "thursday";
 
@@ -307,3 +307,41 @@ if (day === "monday") {
 } else {
   console.log("Not a valid day!");
 }
+
+3 + 4;
+1991;
+true && false && !false;
+
+if (23 > 10) {
+  const str = "23 is bigger";
+}
+
+const me = "Jakub";
+console.log(`I'm ${me}, ${2023 - 2002} years old.`);
+*/
+
+const age = 21;
+// age >= 18
+//   ? console.log("I like to drink wine 🍷")
+//   : console.log("I like to drink milk 🥛");
+
+const drink = age >= 18 ? "Wine" : "Water";
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = "wine";
+} else {
+  drink2 = "water";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+
+const name = "Jakub";
+console.log(`It ${name === "Jakub" ? "is" : "is not"} my name!`);
+
+const isTired = true;
+const canDrive =
+  isTired != true ? "Yes! She can drive!" : "No! Get away from the wheels!";
+console.log(canDrive);

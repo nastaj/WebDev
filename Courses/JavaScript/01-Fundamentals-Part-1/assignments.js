@@ -139,3 +139,14 @@ switch (language) {
   default:
     console.log("Great language too :D");
 }
+console.log("########################");
+
+// *****************************
+// LECTURE: The Conditional (Ternary) Operator
+// *****************************
+
+console.log(
+  `${country}'s population is ${
+    population > 33000000 ? "above average." : "below average."
+  }`
+);
