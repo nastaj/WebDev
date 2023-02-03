@@ -66,3 +66,24 @@ const describePopulation = function (country, population) {
 console.log(describePopulation("China", 1441));
 console.log(describePopulation("Poland", 38));
 console.log(describePopulation("Ireland", 5));
+
+// *****************************
+// LECTURE: Introduction to Arrays
+// *****************************
+console.log("////////////////////");
+
+const populations = [1441, 38, 5, 6];
+
+console.log(populations.length === 4);
+
+function percentageOfWorld1(population) {
+  return `${Math.round(Number((population / 7900) * 100) * 10) / 10}%`;
+}
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
+  percentageOfWorld1(populations[3]),
+];
+
+console.log(percentages);

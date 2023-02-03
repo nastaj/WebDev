@@ -141,7 +141,6 @@ function addAllowance(allowance) {
 }
 
 console.log(addAllowance(10));
-*/
 
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
@@ -150,7 +149,7 @@ const calcAge = function (birthYear) {
 const yearsUntilRetirement = function (birthYear, firstName) {
   const age = calcAge(birthYear);
   const retirement = 65 - age;
-
+  
   if (retirement > 0) {
     console.log(`${firstName} retires in ${retirement} years.`);
     return retirement;
@@ -162,3 +161,77 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 
 console.log(yearsUntilRetirement(2002, "Jakub"));
 console.log(yearsUntilRetirement(1950, "Mike"));
+
+const tellFortune = function (numberOfChildren, partnerName, location, job) {
+  return `You will be a ${job} in ${location}, and married to ${partnerName} with ${numberOfChildren} kids.`;
+};
+console.log(tellFortune(2, "Julia", "Ireland", "programmer"));
+const calculateDogAge = function (dogAge, humanAge) {
+  const dogToHuman = dogAge * 7;
+  const humanToDog = humanAge / 7;
+  return `Your doggie is ${dogToHuman} years old in dog years!
+  You are ${humanToDog} years old in dog years!`;
+};
+console.log(calculateDogAge(9, 21));
+
+const calculateSupply = function (age, amountPerDay) {
+  const maxAge = 100;
+  const amountConsumed = amountPerDay * 365 * (maxAge - age);
+  return `You will need ${amountConsumed} snacks to last you until the ripe old age of ${maxAge}.`;
+};
+console.log(calculateSupply(80, 2));
+
+const celsiusToFahrenheit = function (celsiusTemp) {
+  const celsiusConverted = (celsiusTemp / 5) * 9 + 32;
+  return `${celsiusTemp}°C is now ${celsiusConverted}°F.`;
+};
+
+const fahrenheitToCelsius = function (fahrenheitTemp) {
+  const fahrenheitConverted = ((fahrenheitTemp - 32) * 5) / 9;
+  return `${fahrenheitTemp}°F is now ${fahrenheitConverted}°C.`;
+};
+
+console.log(celsiusToFahrenheit(35));
+console.log(fahrenheitToCelsius(14));
+*/
+
+const friend1 = "Michael";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Jay";
+console.log(friends);
+// friends = ["Bob", "Alice"];
+
+const firstName = "Jakub";
+const jakub = [firstName, "Nasta", 2021 - 2002, "student", friends];
+console.log(jakub);
+
+// Exercise
+function calcAge(birthYear) {
+  return 2037 - birthYear;
+}
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
