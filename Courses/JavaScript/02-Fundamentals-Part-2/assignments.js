@@ -116,3 +116,39 @@ if (neighbours.includes("Germany") === false) {
 console.log(neighbours.indexOf("Russia"));
 neighbours[1] = "Russian Federation";
 console.log(neighbours);
+
+// *****************************
+// LECTURE: Basic Array Operations (Methods)
+// *****************************
+console.log("////////////////////");
+
+const myCountry = {
+  country: "Poland",
+  capital: "Warsaw",
+  language: "polish",
+  population: 38,
+  neighbours: [
+    "Germany",
+    "Russia",
+    "Lithuania",
+    "Belarus",
+    "Ukraine",
+    "Slovakia",
+    "Czech Republic",
+  ],
+};
+
+// *****************************
+// LECTURE: Dot vs. Bracket Notation
+// *****************************
+console.log("////////////////////");
+
+console.log(
+  `${myCountry.country} has ${myCountry.population} milion ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry["population"] -= 2;
+console.log(myCountry.population);
