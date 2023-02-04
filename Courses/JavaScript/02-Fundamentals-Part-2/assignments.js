@@ -87,3 +87,32 @@ const percentages = [
 ];
 
 console.log(percentages);
+
+// *****************************
+// LECTURE: Basic Array Operations (Methods)
+// *****************************
+console.log("////////////////////");
+
+const neighbours = [
+  "Germany",
+  "Russia",
+  "Lithuania",
+  "Belarus",
+  "Ukraine",
+  "Slovakia",
+  "Czech Republic",
+];
+
+neighbours.push("Utopia");
+console.log(neighbours);
+
+neighbours.pop(neighbours);
+console.log(neighbours);
+
+if (neighbours.includes("Germany") === false) {
+  console.log("Probably not a central European country :D");
+}
+
+console.log(neighbours.indexOf("Russia"));
+neighbours[1] = "Russian Federation";
+console.log(neighbours);
