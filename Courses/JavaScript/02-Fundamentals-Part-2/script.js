@@ -313,3 +313,53 @@ const interestedIn = prompt(
     `${jakub.firstName} has ${jakub.friends.length} friends, and his best friend is called ${jakub.friends[0]}.`
     );
 */
+
+const jakub = {
+  firstName: "Jakub",
+  lastName: "Nasta",
+  birthYear: 2002,
+  job: "student",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2023 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2023 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+
+  addSummary: function () {
+    let driversLicense;
+    if (this.hasDriversLicense) {
+      driversLicense = "has a driver's license.";
+    } else {
+      driversLicense = "has no driver's license.";
+    }
+
+    this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and ${driversLicense}`;
+    return this.summary;
+  },
+};
+
+console.log(jakub.calcAge());
+
+console.log(jakub.age);
+console.log(jakub.age);
+console.log(jakub.age);
+
+// Challenge
+// "Jakub is a 21-year old student, and he has a/no driver's license."
+
+// The function needs to FIRST be CALLED!
+console.log(jakub.addSummary());
+console.log(jakub.summary);

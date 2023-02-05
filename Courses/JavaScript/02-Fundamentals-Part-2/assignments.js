@@ -136,6 +136,14 @@ const myCountry = {
     "Slovakia",
     "Czech Republic",
   ],
+  describe: function () {
+    this.description = `${this.country} has ${this.population} milion ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`;
+    return this.description;
+  },
+
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+  },
 };
 
 // *****************************
@@ -152,3 +160,13 @@ console.log(myCountry.population);
 
 myCountry["population"] -= 2;
 console.log(myCountry.population);
+
+// *****************************
+// LECTURE: Object Methods
+// *****************************
+console.log("////////////////////");
+
+console.log(myCountry.describe());
+
+myCountry.checkIsland();
+console.log(myCountry.isIsland);
