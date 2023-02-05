@@ -72,7 +72,7 @@ console.log(describePopulation("Ireland", 5));
 // *****************************
 console.log("////////////////////");
 
-const populations = [1441, 38, 5, 6];
+let populations = [1441, 38, 5, 6];
 
 console.log(populations.length === 4);
 
@@ -170,3 +170,39 @@ console.log(myCountry.describe());
 
 myCountry.checkIsland();
 console.log(myCountry.isIsland);
+
+// *****************************
+// LECTURE: Iteration: The for Loop
+// *****************************
+console.log("////////////////////");
+
+for (let i = 1; i <= 50; i++) {
+  console.log(`Voter number ${i} is currently voting.`);
+}
+
+// for (let i = 0; i <= 15; i++) {
+//   console.log(`Value of i is: ${i}`);
+// }
+
+// for (let i = 12; i <= 24; i++) {
+//   console.log(`Value of i is: ${i}`);
+// }
+
+// *****************************
+// LECTURE: Looping Arrays, Breaking and Continuing
+// *****************************
+console.log("////////////////////");
+
+populations = [1441, 38, 5, 6];
+let percentages2 = [];
+
+function percentageOfWorld1(population) {
+  return `${Math.round(Number((population / 7900) * 100) * 10) / 10}%`;
+}
+
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages);
+console.log(percentages2);

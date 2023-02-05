@@ -312,7 +312,7 @@ const interestedIn = prompt(
   console.log(
     `${jakub.firstName} has ${jakub.friends.length} friends, and his best friend is called ${jakub.friends[0]}.`
     );
-*/
+
 
 const jakub = {
   firstName: "Jakub",
@@ -363,3 +363,73 @@ console.log(jakub.age);
 // The function needs to FIRST be CALLED!
 console.log(jakub.addSummary());
 console.log(jakub.summary);
+
+// console.log("Lifting weights repetition 1 🏋️‍♂️");
+// console.log("Lifting weights repetition 2 🏋️‍♂️");
+// console.log("Lifting weights repetition 3 🏋️‍♂️");
+// console.log("Lifting weights repetition 4 🏋️‍♂️");
+// console.log("Lifting weights repetition 5 🏋️‍♂️");
+// console.log("Lifting weights repetition 6 🏋️‍♂️");
+// console.log("Lifting weights repetition 7 🏋️‍♂️");
+// console.log("Lifting weights repetition 8 🏋️‍♂️");
+// console.log("Lifting weights repetition 9 🏋️‍♂️");
+// console.log("Lifting weights repetition 10 🏋️‍♂️");
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+}
+*/
+
+const jakubArray = [
+  "Jakub",
+  "Nasta",
+  2023 - 2002,
+  "student",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+const types = [];
+
+// console.log(jakubArray[0]);
+// console.log(jakubArray[1]);
+// ...
+// console.log(jakubArray[4]);
+// jakubArray[5] does NOT exist
+
+for (let i = 0; i < jakubArray.length; i++) {
+  // Reading from jakubArray array
+  console.log(jakubArray[i], typeof jakubArray[i]);
+
+  // Filling types array
+  // types[i] = typeof jakubArray[i];
+  types.push(typeof jakubArray[i]);
+}
+
+// types[0] = "string";
+// types[1] = "string";
+// types[2] = ["number"];
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < jakubArray.length; i++) {
+  if (typeof jakubArray[i] !== "string") continue;
+
+  console.log(jakubArray[i], typeof jakubArray[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < jakubArray.length; i++) {
+  if (typeof jakubArray[i] === "number") break;
+
+  console.log(jakubArray[i], typeof jakubArray[i]);
+}
