@@ -379,7 +379,6 @@ console.log(jakub.summary);
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
 }
-*/
 
 const jakubArray = [
   "Jakub",
@@ -400,7 +399,7 @@ const types = [];
 for (let i = 0; i < jakubArray.length; i++) {
   // Reading from jakubArray array
   console.log(jakubArray[i], typeof jakubArray[i]);
-
+  
   // Filling types array
   // types[i] = typeof jakubArray[i];
   types.push(typeof jakubArray[i]);
@@ -423,13 +422,51 @@ console.log(ages);
 console.log("--- ONLY STRINGS ---");
 for (let i = 0; i < jakubArray.length; i++) {
   if (typeof jakubArray[i] !== "string") continue;
-
+  
   console.log(jakubArray[i], typeof jakubArray[i]);
 }
 
 console.log("--- BREAK WITH NUMBER ---");
 for (let i = 0; i < jakubArray.length; i++) {
   if (typeof jakubArray[i] === "number") break;
-
+  
   console.log(jakubArray[i], typeof jakubArray[i]);
 }
+
+const jakub = [
+  "Jakub",
+  "Nasta",
+  2023 - 2002,
+  "student",
+  ["Michael", "Peter", "Steven"],
+];
+
+// 0, 1, ..., 4
+// 4, 3, ..., 0
+
+for (let i = jakub.length - 1; i >= 0; i--) {
+  console.log(i, jakub[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`------Starting exercise ${exercise}`);
+  
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♂️`);
+  }
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♂️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
+*/

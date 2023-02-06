@@ -206,3 +206,40 @@ for (let i = 0; i < populations.length; i++) {
 
 console.log(percentages);
 console.log(percentages2);
+
+// *****************************
+// LECTURE: Looping Backwards and Loops in Loops
+// *****************************
+console.log("////////////////////");
+
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let y = 0; y < listOfNeighbours[i].length; y++) {
+    console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+  }
+}
+
+// *****************************
+// LECTURE: The while Loop
+// *****************************
+console.log("////////////////////");
+
+populations = [1441, 38, 5, 6];
+let percentages3 = [];
+
+function percentageOfWorld1(population) {
+  return `${Math.round(Number((population / 7900) * 100) * 10) / 10}%`;
+}
+
+let i = 0;
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}
+
+console.log(percentages3);
