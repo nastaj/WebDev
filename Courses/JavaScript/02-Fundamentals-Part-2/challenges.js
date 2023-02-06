@@ -1,7 +1,7 @@
 // *************
 // Challenge #1
 // *************
-
+/*
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 // Test Data 1
@@ -87,3 +87,47 @@ const checkBMI = function () {
 };
 
 console.log(checkBMI());
+*/
+// Challenge #4
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const namesNumbers = [195, "Julia", 202, "Kimchi"];
+const names = ["Jacob", "Julia", "Kaleeth", "Kimchi"];
+let tips = [];
+let totals = [];
+
+const calcTip = function (bill) {
+  let tip;
+  if (bill >= 50 && bill <= 300) {
+    tip = bill * 0.15;
+    return tip;
+  } else {
+    tip = bill * 0.2;
+    return tip;
+  }
+};
+
+for (a = 0; a < bills.length; a++) {
+  tips.push(calcTip(bills[a]));
+  totals.push(calcTip(bills[a]) + bills[a]);
+}
+
+// BONUS
+const calcAverage = function (arr) {
+  let newArr = [];
+  let sum = 0;
+  for (let a = 0; a < arr.length; a++) {
+    if (typeof arr[a] !== "number") continue;
+    sum += arr[a];
+    newArr.push(sum[a]);
+  }
+  if (sum === 0) {
+    return `Array does not contain any numbers!`;
+  }
+  const average = sum / newArr.length;
+  return Math.round(average * 10) / 10;
+};
+
+console.log(`Average from the bills array: ${calcAverage(bills)}`);
+console.log(`Average from the tips array: ${calcAverage(tips)}`);
+console.log(`Average from the totals array: ${calcAverage(totals)}`);
+console.log(calcAverage(names));
