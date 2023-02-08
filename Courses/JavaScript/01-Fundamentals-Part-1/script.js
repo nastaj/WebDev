@@ -318,7 +318,6 @@ if (23 > 10) {
 
 const me = "Jakub";
 console.log(`I'm ${me}, ${2023 - 2002} years old.`);
-*/
 
 const age = 21;
 // age >= 18

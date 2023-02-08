@@ -88,6 +88,7 @@ const checkBMI = function () {
 
 console.log(checkBMI());
 */
+
 // Challenge #4
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const namesNumbers = [195, "Julia", 202, "Kimchi"];
@@ -131,3 +132,18 @@ console.log(`Average from the bills array: ${calcAverage(bills)}`);
 console.log(`Average from the tips array: ${calcAverage(tips)}`);
 console.log(`Average from the totals array: ${calcAverage(totals)}`);
 console.log(calcAverage(names));
+
+// Challenge #5
+
+const num1 = 50;
+const num2 = 100;
+
+const checkNumbers = function (num1, num2) {
+  if (num1 === 100 || num2 === 100 || num1 + num2 === 100) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(checkNumbers(num1, num2));
