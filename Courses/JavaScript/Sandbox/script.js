@@ -95,3 +95,4 @@ let data = {
 };
 
 console.log(reverse(currentYear));
+console.log(reverse([1, 3, 5, 7]));
