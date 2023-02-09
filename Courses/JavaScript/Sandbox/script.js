@@ -96,3 +96,76 @@ let data = {
 
 console.log(reverse(currentYear));
 console.log(reverse([1, 3, 5, 7]));
+
+console.log('********************************');
+console.log('======AVERAGE GRADES======');
+console.log('********************************');
+console.log('');
+
+const students = [
+  { name: 'John', grades: [90, 85, 80] },
+  { name: 'Jane', grades: [95, 92, 87] },
+  { name: 'Jim', grades: [77, 84, 81] },
+];
+
+const calcAverageGrade = function (students) {
+  for (let i = 0; i < students.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < students[i].grades.length; j++) {
+      sum += students[i].grades[j];
+    }
+    const avg = sum / students[i].grades.length;
+    console.log(
+      `${students[i].name}'s average grade is ${Math.round(avg * 100) / 100}`
+    );
+  }
+  return 0;
+};
+
+console.log(calcAverageGrade(students));
+
+console.log('********************************');
+console.log('======SHOPPING LIST======');
+console.log('********************************');
+console.log('');
+
+const shoppingList = [
+  { item: 'apple', price: 0.5 },
+  { item: 'banana', price: 0.25 },
+  { item: 'orange', price: 0.75 },
+  { item: 'pear', price: 0.35 },
+];
+
+const calcCost = function (shoppingList) {
+  let total = 0;
+  for (let i = 0; i < shoppingList.length; i++) {
+    total += shoppingList[i].price;
+  }
+  return `Total cost of all items is: ${total}`;
+};
+
+console.log(calcCost(shoppingList));
+
+console.log('');
+console.log('********************************');
+console.log('======AVERAGE SALARIES======');
+console.log('********************************');
+console.log('');
+
+const employees = [
+  { name: 'John', salary: 55000 },
+  { name: 'Jane', salary: 75000 },
+  { name: 'Jim', salary: 65000 },
+  { name: 'Jake', salary: 85000 },
+];
+
+const calculateAverageSalary = function () {
+  let totalSalary = 0;
+  for (let i = 0; i < employees.length; i++) {
+    totalSalary += employees[i].salary;
+  }
+  let avgSalary = totalSalary / employees.length;
+  return `The average salary of all employees is: ${avgSalary}`;
+};
+
+console.log(calculateAverageSalary(employees));
