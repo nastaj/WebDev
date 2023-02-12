@@ -4,6 +4,10 @@ const score1El = document.querySelector('#score--0');
 const score2El = document.querySelector('#score--1');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnNew = document.querySelector('.btn--new');
+const btnRules = document.querySelector('.btn--rules');
+const btnCloseModal = document.querySelector('.close-modal');
+const overlay = document.querySelector('.overlay');
 const diceEl = document.querySelector('.dice');
 const player1El = document.querySelector('.player--0');
 const player2El = document.querySelector('.player--1');
@@ -98,4 +102,33 @@ btnHold.addEventListener('click', function () {
     player1El.classList.remove('player--active');
     player2El.classList.add('player--active');
   }
+});
+
+btnNew.addEventListener('click', function () {
+  player2El.classList.remove('player--active');
+  player1El.classList.add('player--active');
+  score1 = 0;
+  score1El.textContent = score1;
+  score2 = 0;
+  score2El.textContent = score2;
+  currentScore1 = 0;
+  currentScore1El.textContent = currentScore1;
+  currentScore2 = 0;
+  currentScore2El.textContent = currentScore2;
+  diceEl.classList.add('hidden');
+});
+
+btnRules.addEventListener('click', function () {
+  document.querySelector('.modal').classList.remove('hidden');
+  document.querySelector('.overlay').classList.remove('hidden');
+});
+
+btnCloseModal.addEventListener('click', function () {
+  document.querySelector('.modal').classList.add('hidden');
+  document.querySelector('.overlay').classList.add('hidden');
+});
+
+overlay.addEventListener('click', function () {
+  document.querySelector('.modal').classList.add('hidden');
+  document.querySelector('.overlay').classList.add('hidden');
 });
