@@ -75,28 +75,9 @@ btnRoll.addEventListener('click', function () {
   // Roll 1-6
   const roll = Math.trunc(Math.random() * 6) + 1;
 
+  // Display dice
   diceEl.classList.remove('hidden');
-
-  switch (roll) {
-    case 1:
-      diceEl.src = 'dice-1.png';
-      break;
-    case 2:
-      diceEl.src = 'dice-2.png';
-      break;
-    case 3:
-      diceEl.src = 'dice-3.png';
-      break;
-    case 4:
-      diceEl.src = 'dice-4.png';
-      break;
-    case 5:
-      diceEl.src = 'dice-5.png';
-      break;
-    case 6:
-      diceEl.src = 'dice-6.png';
-      break;
-  }
+  diceEl.src = `dice-${roll}.png`;
 
   if (playerOne.isActive()) {
     if (roll !== 1) {
