@@ -37,7 +37,7 @@ const firstName = 'Jakub';
 calcAge(1990);
 // console.log(age);
 // printAge();
-*/
+
 
 // Variables
 console.log(me);
@@ -80,3 +80,64 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+*/
+
+// console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+calcAge(2002);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+calcAgeArrow(2002);
+
+const jakub = {
+  year: 2002,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+jakub.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = jakub.calcAge;
+matilda.calcAge();
+
+const f = jakub.calcAge;
+// f();
+
+const log = function () {
+  console.log(`Output: ${this}`);
+};
+log();
+
+const logArr = year => {
+  console.log(`Output: ${year}, ${this}`);
+};
+logArr(2023);
+
+const school = {
+  subject: 'maths',
+  year: 2023,
+  callSummary: function () {
+    console.log(`${this.subject} in ${this.year}`);
+  },
+};
+
+const grade = {
+  level: 'A',
+};
+
+school.callSummary();
+
+grade.callSummary = school.callSummary;
+grade.callSummary();
