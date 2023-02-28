@@ -140,7 +140,7 @@ school.callSummary();
 
 grade.callSummary = school.callSummary;
 grade.callSummary();
-*/
+
 
 // var firstName = 'Matilda';
 
@@ -191,3 +191,63 @@ var addArrow = (a, b) => {
   return a + b;
 };
 // addArrow(2, 5, 8);
+
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jakub',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+me.name = 'Jacob';
+console.log('Friends: ', friend);
+console.log('Me: ', me);
+
+let jake = 'Jake'; // Identifier: jake | Address: 0001 | Value: 'Jake'
+let compton = jake; // Identifier: compton | Address: 0001 | Value: 'Jake'
+jake = 'John'; // Identifier: jake | Address: 0002 | Value: 'John'
+
+console.log(jake);
+console.log(compton);
+*/
+
+// Primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+// marriedJessica = {};
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
