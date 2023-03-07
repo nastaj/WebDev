@@ -61,12 +61,22 @@ const restaurant = {
   },
 
   orderPizza: function (mainIngredient, ...otherIngredients) {
-    if (otherIngredients.length > 3) {
-      console.log('Too many ingredients!');
-    } else {
-      console.log(`Ordered pizza with ${mainIngredient} 
-      ${otherIngredients}`);
+    let str = '';
+    for (let i = 0; i <= otherIngredients.length - 1; i++) {
+      if (i == otherIngredients.length - 1) {
+        str += otherIngredients[i];
+        str += '.';
+      } else if (i == otherIngredients.length - 2) {
+        str += otherIngredients[i];
+        str += ' and ';
+      } else {
+        str += otherIngredients[i];
+        str += ', ';
+      }
     }
+    console.log(
+      `Order successful. Ordered pizza with ${mainIngredient}, ${str}`
+    );
   },
 };
 
@@ -107,8 +117,8 @@ add(8, 2, 5, 3, 2, 1, 4);
 const x = [23, 5, 7];
 add(...x);
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms');
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach', 'pepperoni');
+
 ///////////////////////////////
 //Lecture: SPREAD OPERATOR (...)
 ///////////////////////////////
