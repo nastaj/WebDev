@@ -82,10 +82,52 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) {
+  console.log(item);
+}
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// For-of function example
+const orderForOf = function (...items) {
+  let orderString = '';
+  for (const [i, el] of items.entries()) {
+    if (i == items.length - 1) {
+      orderString += el + '.';
+    } else {
+      orderString += el + ', ';
+    }
+  }
+  console.log(`Ordered ${orderString}`);
+};
+
+// For function example
+const orderFor = function (...items) {
+  let orderString = '';
+  for (let i = 0; i < items.length; i++) {
+    if (i == items.length - 1) {
+      orderString += items[i] + '.';
+    } else {
+      orderString += items[i] + ', ';
+    }
+  }
+  console.log(`Ordered ${orderString}`);
+};
+
+orderForOf('pizza', 'margherita', 'garlic bread', 'coke');
+orderFor('pizza', 'margherita', 'garlic bread', 'coke');
+// orderFor('pizza', 'margherita', 'garlic bread', 'coke');
+
+// console.log(...menu.entries());
+
 ///////////////////////////////
 //Lecture: LOGICAL ASSIGNMENT OPERATORS
 ///////////////////////////////
-
+/*
 const rest1 = {
   name: 'Capri',
   // numGuests: 20,
@@ -115,7 +157,7 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
-
+*/
 ///////////////////////////////
 //Lecture: NULLISH COALESCING OPERATOR (??)
 ///////////////////////////////
