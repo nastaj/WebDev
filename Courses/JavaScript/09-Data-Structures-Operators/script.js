@@ -75,15 +75,63 @@ const restaurant = {
       }
     }
     console.log(
-      `Order successful. Ordered pizza with ${mainIngredient}, ${str}`
+      `Order successful. Ordered pizza with ${mainIngredient}${
+        otherIngredients.length === 1 ? ' and' : ','
+      } ${str}`
     );
   },
 };
 
 ///////////////////////////////
-//Lecture: REST PATTERN AND PARAMETERS
+//Lecture: NULLISH COALESCING OPERATOR (??)
 ///////////////////////////////
 
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+///////////////////////////////
+//Lecture: SHORT CIRCUITING (&& and ||)
+///////////////////////////////
+/*
+console.log('---- OR ----');
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jakub');
+console.log('' || 'Jakub');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---- AND ----');
+console.log(0 && 'Jakub');
+console.log(7 && 'Jakub');
+console.log('Hello' && undefined);
+
+console.log('Hello' && 23 && null && 'Jakub');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
+///////////////////////////////
+//Lecture: REST PATTERN AND PARAMETERS
+///////////////////////////////
+/*
 // 1) Destructuring
 // SPREAD, because on RIGHT side of =
 const arr = [1, 2, ...[3, 4]];
@@ -118,7 +166,7 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach', 'pepperoni');
-
+*/
 ///////////////////////////////
 //Lecture: SPREAD OPERATOR (...)
 ///////////////////////////////
