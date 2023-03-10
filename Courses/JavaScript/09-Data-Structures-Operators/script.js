@@ -1,5 +1,20 @@
 'use strict';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -12,55 +27,43 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  // Old way
+  // openingHours: openingHours,
+
+  // ES6 enhanced object literals
+  openingHours,
+
+  // Old way
+  // order: function (starterIndex, mainIndex) {
+  //   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  // },
+
+  //ES6 enhanced object literals
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderCategory: function (categoriesIndex, mainIndex) {
+
+  orderCategory(categoriesIndex, mainIndex) {
     return [this.categories[categoriesIndex], this.mainMenu[mainIndex]];
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
   },
 
-  specialOffer: function ({
-    day,
-    categoryIndex,
-    starterIndex,
-    mainIndex,
-    discount,
-  }) {
+  specialOffer({ day, categoryIndex, starterIndex, mainIndex, discount }) {
     console.log(
       `Special offer for ${this.categories[categoryIndex]} ${day}! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} on ${discount} discount! Visit our restaurant ${this.name} at ${this.location}.`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     let str = '';
     for (let i = 0; i <= otherIngredients.length - 1; i++) {
       if (i == otherIngredients.length - 1) {
@@ -82,6 +85,96 @@ const restaurant = {
   },
 };
 
+///////////////////////////////
+//Lecture: LOOPING OBJECTS: KEYS, VALUES, ENTRIES
+///////////////////////////////
+/*
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// [key, value]
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+///////////////////////////////
+//Lecture: OPTIONAL CHAINING (?.)
+///////////////////////////////
+/*
+// Old way
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open;
+  console.log(
+    `On ${day}, we ${
+      restaurant.openingHours[day] == undefined
+        ? 'are closed.'
+        : 'open at ' + open + '.'
+    }`
+  );
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Jakub', email: 'hello@jakub.ie' }];
+
+// Old way
+if (users.length > 0) console.log(users[0].name);
+else console.log('User array is empty');
+
+// WITH optional chaining
+console.log(users[0]?.name ?? 'User array is empty');
+*/
+///////////////////////////////
+//Lecture: ENHANCED OBJECT LITERALS
+///////////////////////////////
+/*
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHoursComp = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+*/
+///////////////////////////////
+//Lecture: FOR-OF LOOP
+///////////////////////////////
+/*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (const item of menu) {
@@ -123,7 +216,7 @@ orderFor('pizza', 'margherita', 'garlic bread', 'coke');
 // orderFor('pizza', 'margherita', 'garlic bread', 'coke');
 
 // console.log(...menu.entries());
-
+*/
 ///////////////////////////////
 //Lecture: LOGICAL ASSIGNMENT OPERATORS
 ///////////////////////////////
