@@ -1,5 +1,6 @@
 'use strict';
 // CHALLENGE #1
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -81,8 +82,9 @@ printGoals(...game.scored);
 // 7.
 team1 < team2 && console.log('Team 1 is more likely to win.');
 team1 > team2 && console.log('Team 2 is more likely to win.');
-
+*/
 // CHALLENGE #2
+/*
 // 1.
 console.log('==================');
 for (const [i, player] of game.scored.entries()) {
@@ -132,3 +134,65 @@ const viewMatch = function (teamOne, teamTwo) {
 };
 
 viewMatch(teamOne, teamTwo);
+*/
+// Challenge #3
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🟨 Yellow card'],
+  [69, '🟥 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🟨 Yellow card'],
+]);
+
+// 1.
+const events = [...new Set([...gameEvents.values()])];
+console.log(events);
+
+// 2.
+gameEvents.delete(64);
+
+// 3.
+const times = [...gameEvents.keys()];
+console.log(
+  `An event happened, on average, every ${
+    times[times.length - 1] / gameEvents.size
+  } minutes.`
+);
+
+// 4.
+for (const [key, value] of gameEvents) {
+  console.log(
+    `${key < 45 ? '[FIRST HALF]' : '[SECOND HALF]'} ${key}: ${value}`
+  );
+}
+
+// 5.
+for (const [key, value] of gameEvents) {
+  value === '🟥 Red card'
+    ? console.log(`There was a ${value} at ${key} minute!`)
+    : 'No red cards in this match.';
+
+  value === '⚽ GOAL'
+    ? console.log(`There was a ${value} at ${key} minute!`)
+    : 'No goals this match.';
+}
+
+// 6.
+const goalsTimes = [];
+for (const [key, value] of gameEvents) {
+  if (value === '⚽ GOAL') {
+    goalsTimes.push(key);
+  }
+}
+
+console.log(
+  `Average time between goals: ${
+    goalsTimes[goalsTimes.length - 1] / goalsTimes.length
+  } minutes.`
+);
