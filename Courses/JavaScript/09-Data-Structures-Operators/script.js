@@ -85,9 +85,92 @@ const restaurant = {
   },
 };
 ///////////////////////////////
+//Lecture: WORKING WITH STRINGS #1
+///////////////////////////////
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+// Slice (Hard-coded examples)
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+// Slice (Computed examples)
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// Slice (Minus indexes)
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat 😥');
+  } else {
+    console.log('You got lucky 😎');
+  }
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// What JavaScript does when we call method on a string
+console.log(new String('Jakub'));
+console.log(typeof new String('Jakub'));
+
+// Exercises
+const showInitials = function (fullName) {
+  let str = ''; // initial string
+  const spacesCount = fullName.split(' ').length - 1; // check how many spaces are in the string
+  const initialFirst = fullName[0]; // get the first initial
+  const initialSecond = fullName[fullName.indexOf(' ') + 1]; // get the second initial
+  const initialThird = fullName[fullName.lastIndexOf(' ') + 1]; // get the third (optional) initial
+  str += `Your initials are: ${initialFirst}${initialSecond}`; // building the string
+
+  if (spacesCount > 1) {
+    str += initialThird; // add the third initial if the number of spaces is greater than 1
+  }
+
+  console.log(str); // log the string
+};
+
+showInitials('Jakub Nasta');
+showInitials('Mark Linder');
+showInitials('John Johnny Johnson');
+
+const js = 'JavaScript Shenanigans';
+console.log(js.slice(0, js.indexOf(' ')));
+console.log(js.slice(js.indexOf(' ') + 1));
+
+const isLong = function (string) {
+  string.length > 10
+    ? console.log(
+        `That's a long string! Number of characters: ${string.length}`
+      )
+    : console.log(
+        `Not a very long string. Number of characters: ${string.length}`
+      );
+};
+
+isLong('Jakub');
+isLong(js);
+///////////////////////////////
 //Lecture: MAPS: Iteration
 ///////////////////////////////
-
+/*
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -124,7 +207,7 @@ console.log([...question]);
 // console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
-
+*/
 ///////////////////////////////
 //Lecture: MAPS: FUNDAMENTALS
 ///////////////////////////////
