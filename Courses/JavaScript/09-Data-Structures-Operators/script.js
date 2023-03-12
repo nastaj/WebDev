@@ -167,6 +167,85 @@ const isLong = function (string) {
 
 isLong('Jakub');
 isLong(js);
+
+// Changing string to lower/upper case
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jAkUB'; // Jakub
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const fixCapitalization = function (passenger) {
+  const passengerLower = passenger.toLowerCase();
+  const passengerCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengerCorrect);
+};
+
+fixCapitalization('jAKuB');
+fixCapitalization('MARk');
+fixCapitalization('jOHN');
+
+// Comparing emails
+const email = 'hello@jakub.io';
+const loginEmail = '   Hello@Jakub.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+const checkEmails = function (email1, email2) {
+  const normalizedEmail = email2.toLowerCase().trim().replaceAll(' ', '');
+  email1 === normalizedEmail
+    ? console.log('Emails are matching ✅')
+    : console.log('Emails are not the same ❌');
+};
+
+checkEmails('donme@don.me', 'DON  mE@ DOn .Me');
+checkEmails('donme@don.me', 'DbNms@DOn .Me ');
+
+// Replacing
+const priceIE = '288,97€';
+const priceUS = priceIE.replace('€', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Boleans
+const plane2 = 'Airbus A320neo';
+console.log(plane2.includes('A320neo'));
+console.log(plane2.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the NEW AIRBUS family.');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase().replaceAll(' ', '');
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+checkBaggage('I have a Laptop, some Food and a Pocket Kn i fe');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
 ///////////////////////////////
 //Lecture: MAPS: Iteration
 ///////////////////////////////
