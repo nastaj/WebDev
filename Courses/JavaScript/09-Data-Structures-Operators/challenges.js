@@ -136,6 +136,7 @@ const viewMatch = function (teamOne, teamTwo) {
 viewMatch(teamOne, teamTwo);
 */
 // Challenge #3
+/*
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔁 Substitution'],
@@ -196,3 +197,44 @@ console.log(
     goalsTimes[goalsTimes.length - 1] / goalsTimes.length
   } minutes.`
 );
+*/
+
+// Challenge #4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const textArea = document.querySelector('textarea');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  const content = textArea.value;
+  const splitContent = content.split('\n');
+  const trimmedContent = splitContent.map(function (arr) {
+    return arr.trim();
+  });
+  const splitContent2 = [];
+  for (let el of trimmedContent) {
+    splitContent2.push(el.split('_'));
+  }
+  for (let [i, el] of splitContent2.entries()) {
+    const finishedContent =
+      el[0].toLowerCase() +
+      el[1][0].toUpperCase() +
+      el[1].slice(1).toLowerCase();
+    console.log(
+      finishedContent.replaceAll(' ', '').padEnd(20) + '✅'.repeat(i + 1)
+    );
+  }
+
+  // ALTERNATIVE SOLUTION
+  // const text = textArea.value;
+  // const rows = text.split('\n');
+  // for (const [i, row] of rows.entries()) {
+  //   const [first, second] = row.toLowerCase().trim().split('_');
+  //   const output = `${first}${second.replace(
+  //     second[0],
+  //     second[0].toUpperCase()
+  //   )}`;
+  //   console.log(output.padEnd('20') + '✅'.repeat(i + 1));
+  // }
+});
