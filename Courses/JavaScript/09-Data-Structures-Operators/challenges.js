@@ -240,6 +240,7 @@ btn.addEventListener('click', function () {
   // }
 });
 */
+
 // Challenge #5
 
 const flights =
@@ -251,18 +252,15 @@ const flights =
 //            Departure from FAO to LIS (12h30)
 // Data needed for first part of the section
 
-for (let flight of flights.split('+')) {
+for (const flight of flights.split('+')) {
   let str = '';
   let [status, sector1, sector2, time] = flight.split(';');
-
-  status = status.replace(status[0], '').replace('_', ' ');
+  status = status.slice(1).replace('_', ' ');
   sector1 = sector1.slice(0, 3).toUpperCase();
   sector2 = sector2.slice(0, 3).toUpperCase();
   time = time.replace(':', 'h');
-
   str += `${
-    status.includes('Delayed') ? '🔴 ' + status : status.padStart(20)
+    status.includes('Delayed') ? '🔴 ' + status : status.padStart(20, ' ')
   } from ${sector1} to ${sector2} (${time})`;
-
   console.log(str);
 }

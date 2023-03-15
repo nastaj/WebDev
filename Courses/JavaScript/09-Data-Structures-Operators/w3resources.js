@@ -94,3 +94,34 @@ const swapCase = function (string) {
 swapCase('AaBbc');
 swapCase('Jakub');
 swapCase('BRuNo');
+
+// 11)
+const camelize = function (string) {
+  const stringSplit = string.split(' ');
+  const stringArr = [];
+  for (let word of stringSplit) {
+    word = word[0].toUpperCase() + word.slice(1);
+    stringArr.push(word);
+  }
+  console.log(stringArr.join(''));
+};
+
+camelize('JavaScript exercises');
+camelize('JavaScript Exercises');
+camelize('johnny John johnson');
+
+// 12)
+
+const uncamelize = function (string, divider) {
+  let charArr = [];
+  for (char of string) {
+    charArr.push(
+      char.toUpperCase() ? char.replace(char.toUpperCase(), divider) : char
+    );
+  }
+  console.log(`${charArr[0]}${charArr.slice(charArr.indexOf(divider))}`);
+};
+
+uncamelize('helloWorld');
+uncamelize('helloWorld', '-');
+uncamelize('helloWorld', '_');
