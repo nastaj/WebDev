@@ -130,3 +130,16 @@ Rewrite the code below to use array destructuring instead of assigning each valu
   console.log(student1, student2, student3, student4, student5);
   console.log();
 }
+
+const restaurant = {
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+};
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) {
+  console.log(item); // returns all the items in the array
+}
+
+console.log(menu);
