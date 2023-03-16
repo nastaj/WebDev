@@ -67,7 +67,7 @@ newPassport(jakub);
 /* *************************************************
 /* Lecture: FUNCTIONS ACCEPTING CALLBACK FUNCTIONS */
 /***************************************************/
-
+/*
 const oneWord = function (str) {
   return str.replaceAll(' ', '').toLowerCase();
 };
@@ -155,3 +155,120 @@ const showCredentials = function (age, name) {
 };
 
 showCredentials(calcAge(2002), showFullName('John', 'Smith'));
+*/
+/* ****************************************
+/* Lecture: FUNCTIONS RETURNING FUNCTIONS */
+/******************************************/
+/*
+// Function expression
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+// Arrow function
+// const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+greeterHey('Jakub');
+greeterHey('Steven');
+
+greet('Hello')('Jakub');
+
+///////////////////////////////
+const gradesJakub = [60, 64, 70, 47, 56, 78, 65, 79];
+const gradesSteve = [];
+
+const populateGrades = function (arr) {
+  for (let i = 0; i < 8; i++) {
+    arr.push(Math.trunc(Math.random() * 100) + 1);
+  }
+};
+
+populateGrades(gradesSteve);
+console.log(gradesSteve);
+
+const getAverage = function (grades) {
+  let sum = 0;
+  let average = 0;
+  for (const grade of grades) {
+    sum += grade;
+  }
+  average = Math.round((sum / grades.length) * 10) / 10;
+  return average;
+};
+
+const showGrades = function (grades, average) {
+  return function (name) {
+    console.log(`You are ${name}.`);
+    console.log(`Your grades are: ${[...grades]}`);
+    console.log(`Average of your grades is: ${average}`);
+  };
+};
+
+const averageJakub = showGrades(gradesJakub, getAverage(gradesJakub));
+averageJakub('Jakub');
+
+const showGradesArr = (grades, average) => name =>
+  console.log(
+    `You are ${name} \nYour grades are: ${[
+      grades.toString(),
+    ]} \nAverage of your grades is: ${average}`
+  );
+
+const averageSteve = showGradesArr(gradesSteve, getAverage(gradesSteve));
+averageSteve('Steve');
+*/
+/* ****************************************
+/* Lecture: CALL AND APPLY METHODS */
+/******************************************/
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jakub Nasta');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// Does NOT work
+// book(23, 'Sarah Williams');
+
+// Call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+
+// Apply method
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
