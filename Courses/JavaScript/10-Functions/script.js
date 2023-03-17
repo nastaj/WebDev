@@ -223,7 +223,7 @@ averageSteve('Steve');
 /* ****************************************
 /* Lecture: CALL, APPLY, BIND METHODS */
 /******************************************/
-
+/*
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
@@ -317,3 +317,50 @@ console.log(addVAT(100));
 // };
 // const addVAT = addTax(0.23);
 // console.log(addVAT(100));
+*/
+/* ****************************************
+/* Lecture: IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE) 
+/******************************************/
+/*
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE
+
+// Expression
+(function () {
+  console.log('This will never run again');
+})();
+
+// Arrow
+(() => console.log('This will never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+// console.log(isPrivate);
+console.log(notPrivate);
+*/
+/* *******************
+/* Lecture: CLOSURES */
+/*********************/
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
