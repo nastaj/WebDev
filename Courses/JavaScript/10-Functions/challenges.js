@@ -1,5 +1,5 @@
 // Challenge #1
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -50,3 +50,19 @@ const data2 = [1, 5, 3, 9, 6, 1];
 
 const data1Display = poll.displayResults.call({ answers: data1 }, 'string');
 const data2Display = poll.displayResults.call({ answers: data2 }, 'array');
+*/
+
+// Challenge #2
+// Function is called immediately and only once
+(function () {
+  const header = document.querySelector('h1');
+  // Header color is changed to red once
+  header.style.color = 'red';
+  // Even though the parent function has finished executing, the callback function in the eventListener is still present. It has closed over the IIFE function and its header variable, preserving them in the closure's Variable Environment.
+  document.body.addEventListener('click', () => {
+    // Toggle colors
+    header.style.color === 'blue'
+      ? (header.style.color = 'red')
+      : (header.style.color = 'blue');
+  });
+})();
