@@ -74,3 +74,68 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// Lecture: Simple Array Methods
+/////////////////////////////////////////////////
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// SLICE
+// Returns selected elements in an array, as a new array
+// Slice does not mutate the original array - it returns a new array.
+console.log('======== SLICE ========');
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -2));
+// Shallow copy with slice
+console.log(arr.slice());
+
+// SPLICE
+// Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place (similar to slice).
+// Splice, as opposed to slice, mutates the original array. It is best used for removing the last element from an array.
+console.log('======== SPLICE ========');
+// console.log(arr.splice(2));
+arr.splice(-1);
+console.log(arr);
+arr.splice(1, 2); // First argument works the same as in the slice method, and the second argument specifies the number of elements that we want to delete
+console.log(arr);
+
+// REVERSE
+// Reverses order of the array elements.
+// Reverse mutates the original array.
+console.log('======== REVERSE ========');
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+// CONCAT
+// Concatanates elements from one array with elements with the second array.
+// Concat does not mutate the original array.
+console.log('======== CONCAT ========');
+const letters = arr.concat(arr2);
+console.log(letters);
+
+// JOIN
+// Joins the elements from an array, returning them as a string separated with the specified separator.
+console.log('======== JOIN ========');
+console.log(letters.join(' - '));
+
+// AT
+// Returns specified element of the array
+console.log('======== AT ========');
+const arr3 = [23, 11, 64];
+
+// Old way
+console.log(arr3[0]);
+
+// New way
+console.log(arr3.at(0));
+
+// Getting last element
+// Traditional
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.slice(-1)[0]);
+// Modern
+console.log(arr3.at(-1));
