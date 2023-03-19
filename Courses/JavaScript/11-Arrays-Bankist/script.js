@@ -65,18 +65,18 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // Lecture: Simple Array Methods
 /////////////////////////////////////////////////
-
+/*
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 // SLICE
@@ -139,3 +139,67 @@ console.log(arr3[arr3.length - 1]);
 console.log(arr3.slice(-1)[0]);
 // Modern
 console.log(arr3.at(-1));
+*/
+/////////////////////////////////////////////////
+// Lecture: Looping Arrays: forEach
+/////////////////////////////////////////////////
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log('----- forEach -----');
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
+// 0: function(200)
+// 1: function(450)
+// 2: function(-400)
+
+// Exercise
+const students = [
+  { name: 'Jakub', course: 'Digital Media', year: 1 },
+  { name: 'Amy', course: 'Game Design', year: 2 },
+  { name: 'Alf', course: 'Software Development', year: 3 },
+];
+
+students.forEach((st, i) => {
+  console.log(`${i + 1}.`);
+  console.log(`Name: ${st.name}`);
+  console.log(`Course: ${st.course}`);
+  console.log(`Year: ${st.year}`);
+  if (st.year === 1) console.log(`Good luck on your first year!`);
+  else if (st.year === 2) console.log(`You're halfway there!`);
+  else if (st.year === 3) console.log(`Almost there!`);
+});
+*/
+/////////////////////////////////////////////////
+// Lecture: forEach with Maps and Sets
+/////////////////////////////////////////////////
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+// Map
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+currenciesUnique.forEach(function (value, _value, set) {
+  console.log(`${_value}: ${value}`);
+});
