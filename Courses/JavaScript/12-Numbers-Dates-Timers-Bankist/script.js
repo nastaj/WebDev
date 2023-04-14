@@ -292,6 +292,7 @@ console.log(Number.isInteger(23 / 0));
 /////////////////////////////
 // Lecture: Math and rounding
 /////////////////////////////
+/*
 console.log(Math.sqrt(25));
 console.log(25 ** (1 / 2));
 console.log(8 ** (1 / 3));
@@ -329,3 +330,41 @@ console.log(Math.floor(76.8));
 // Rounding decimals
 console.log((2.7).toFixed(3));
 console.log((3.464).toFixed(2));
+*/
+/////////////////////////////
+// Lecture: Remainder operator
+/////////////////////////////
+/*
+console.log(5 % 2);
+console.log(5 / 2); // 5 = 2 * 2 + 1
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(5));
+console.log(isEven(8));
+console.log(isEven(21));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    // 0, 2, 4, 6
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    // 0, 3, 6, 9
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
+*/
+/////////////////////////////
+// Lecture: Numeric separators
+/////////////////////////////
+/*
+const diameter = 287_460_000_00;
+console.log(diameter);
+
+const price = 345_99;
+console.log(price);
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+
+const PI = 3.1415;
+console.log(PI);
+*/
