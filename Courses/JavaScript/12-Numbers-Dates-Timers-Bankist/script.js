@@ -368,3 +368,72 @@ const transferFee2 = 1_500;
 const PI = 3.1415;
 console.log(PI);
 */
+/////////////////////////////
+// Lecture: BigInt
+/////////////////////////////
+/*
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(6475687343564674635656724576567n);
+
+// Operations
+console.log(10000n + 10000n);
+console.log(356353464673453564n * 534534645n);
+
+const huge = 6545645647854345243n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == 20);
+console.log(20n == '20');
+
+console.log(huge + ' is REALLY big!!!');
+
+// Divisions
+console.log(10n / 3n);
+*/
+/////////////////////////////
+// Lecture: Dates
+/////////////////////////////
+/*
+// Create a date
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Sat Apr 15 2023 10:48:40'));
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 33));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+*/
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
