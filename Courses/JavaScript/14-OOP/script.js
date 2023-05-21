@@ -44,3 +44,28 @@ const lotr = new Book(
 );
 
 console.log(lotr);
+
+/////////////////////////////////
+// Lecture: Prototypes
+/////////////////////////////////
+
+console.log(Person.prototype);
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+jakub.calcAge();
+matilda.calcAge();
+
+console.log(jakub.__proto__);
+console.log(jakub.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(jakub));
+console.log(Person.prototype.isPrototypeOf(Person));
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(jakub.species, matilda.species);
+
+console.log(jakub.hasOwnProperty('firstName'));
+console.log(jakub.hasOwnProperty('species'));
