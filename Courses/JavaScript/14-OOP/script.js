@@ -69,3 +69,32 @@ console.log(jakub.species, matilda.species);
 
 console.log(jakub.hasOwnProperty('firstName'));
 console.log(jakub.hasOwnProperty('species'));
+
+Book.prototype.calcLength = function () {
+  return this.title.length;
+};
+
+console.log(lotr.calcLength());
+console.log(lotr.__proto__);
+
+console.log(jakub.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(jakub.__proto__.__proto__);
+console.log(jakub.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3, 6, 4, 5, 6, 6, 6, 10, 10, 9, 3]; // new Array === [];
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
+const h1 = document.querySelector('h1');
+console.log(h1.__proto__);
