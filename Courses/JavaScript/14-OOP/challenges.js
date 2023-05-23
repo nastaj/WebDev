@@ -35,6 +35,7 @@ console.log(Car.prototype);
 console.log(bmw.__proto__);
 
 // Challenge #2
+
 console.log('===== ES6 Classes =====');
 
 // 1.
@@ -79,3 +80,42 @@ ford.brake();
 ford.speedUS;
 ford.speedUS = 35;
 console.log(ford);
+
+// Challenge #3
+
+console.log('=== Inheritance: Function Constructor ===');
+
+// 1.
+const EV = function (make, speed, charge) {
+  Car.call(this, make, speed);
+  this.charge = charge;
+};
+
+EV.prototype = Object.create(Car.prototype);
+
+// 2.
+EV.prototype.chargeBattery = function (chargeTo) {
+  return (this.charge = chargeTo);
+};
+
+// 3.
+EV.prototype.accelerate = function () {
+  this.speed += 20;
+  this.charge--;
+  console.log(
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`
+  );
+};
+
+// 4.
+const tesla = new EV('Tesla', 120, 23);
+tesla.chargeBattery(90);
+tesla.accelerate();
+tesla.accelerate();
+tesla.accelerate();
+tesla.accelerate();
+tesla.brake();
+
+console.log(tesla.__proto__);
+console.log(tesla instanceof EV);
+console.log(tesla instanceof Car);
