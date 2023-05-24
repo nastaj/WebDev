@@ -348,43 +348,66 @@
 // Lecture: Another Class Example
 /////////////////////////////////
 
+// 1) Public fields
+// 2) Private fields
+// 3) Public methods
+// 4) Private methods
+// (there is also the static version)
+
 class Account {
+  // 1) Public fields (instances)
+  locale = navigator.language;
+
+  // 2) Private fields (instances)
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.pin = pin;
-    this.movements = [];
-    this.locale = navigator.language;
+    // protected property
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
 
     console.log(`Thanks for opening an account, ${owner}`);
   }
 
+  // 3) Public methods
   // Public interface (API)
+  getMovements() {
+    return this.#movements;
+  }
+
   deposit(value) {
-    this.movements.push(value);
+    this.#movements.push(value);
+    return this;
   }
 
   withdraw(value) {
     this.deposit(-value);
-  }
-
-  approveLoan(value) {
-    const accBalance = this.movements.reduce((acc, mov) => acc + mov, 0);
-
-    if (accBalance < value) console.log('You cannot take the loan!');
-    else return true;
+    return this;
   }
 
   currentBalance() {
-    const accBalance = this.movements.reduce((acc, mov) => acc + mov, 0);
+    const accBalance = this.#movements.reduce((acc, mov) => acc + mov, 0);
     console.log(`Current account balance: ${accBalance}`);
   }
 
   requestLoan(value) {
-    if (this.approveLoan(value)) {
+    if (this.#approveLoan(value)) {
       this.deposit(value);
       console.log('Loan approved');
+      return this;
     }
+  }
+
+  // 4) Private methods
+  #approveLoan(value) {
+    const accBalance = this.#movements.reduce((acc, mov) => acc + mov, 0);
+
+    if (accBalance < value) console.log('You cannot take the loan!');
+    else return true;
   }
 }
 
@@ -396,5 +419,13 @@ acc1.deposit(250);
 acc1.withdraw(140);
 acc1.currentBalance();
 acc1.requestLoan(100);
+console.log(acc1.getMovements());
 
 console.log(acc1);
+
+// console.log(acc1.#approveLoan(100));
+// console.log(acc1.#movements);
+
+// Chaining
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(100).withdraw(200);
+console.log(acc1.getMovements());
