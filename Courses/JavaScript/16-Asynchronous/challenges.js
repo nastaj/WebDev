@@ -38,8 +38,6 @@ const getCountryNeighbours = function (neighbours) {
 const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
     .then(response => {
-      console.log(response);
-
       if (!response.ok) {
         renderError('Country not found! Try again.');
       }
@@ -47,8 +45,6 @@ const whereAmI = function (lat, lng) {
       return response.json();
     })
     .then(data => {
-      console.log(data);
-
       if (data.city === 'Throttled! See geocode.xyz/pricing') {
         const errorMsg = 'Throttled! Try again soon.';
         renderError(errorMsg);
