@@ -35,8 +35,18 @@ const getCountryNeighbours = function (neighbours) {
   );
 };
 
-const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude, longitude } = pos.coords;
+      return fetch(`https://geocode.xyz/${latitude},${longitude}?geoit=json`);
+    })
     .then(response => {
       if (!response.ok) {
         renderError('Country not found! Try again.');
@@ -71,11 +81,4 @@ const whereAmI = function (lat, lng) {
 // whereAmI(19.037, 72.873);
 // whereAmI(-33.933, 18.474);
 
-btn.addEventListener('click', () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(pos => {
-      const { latitude, longitude } = pos.coords;
-      whereAmI(latitude, longitude);
-    });
-  }
-});
+btn.addEventListener('click', whereAmI);
