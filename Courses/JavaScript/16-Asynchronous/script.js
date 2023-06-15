@@ -241,8 +241,6 @@ const whereAmI = async function () {
     if (dataGeo.city === 'Throttled! See geocode.xyz/pricing')
       throw new Error('Too many requests. Try again later.');
 
-    console.log(dataGeo);
-
     // Country data
     // fetch(`https://restcountries.com/v3.1/name/${country}`).then(res =>
     //   console.log(res)
@@ -256,20 +254,27 @@ const whereAmI = async function () {
 
     const [data] = await response.json();
     renderCountry(data);
-    console.log(data);
+
+    return `You are in ${dataGeo.city}, ${dataGeo.country}`;
   } catch (err) {
     console.error(`${err} 🤯`);
     renderError(`🤯 ${err.message}`);
+
+    // Reject promise returned from async function
+    throw err;
   }
 };
 
-whereAmI();
-console.log('FIRST');
+console.log('1: Will get location');
+// const city = whereAmI();
+// console.log(city);
 
-// try {
-//   let y = 1;
-//   const x = 2;
-//   x = 3;
-// } catch (err) {
-//   alert(err);
-// }
+(async function () {
+  try {
+    const city = await whereAmI();
+    console.log(`2: ${city}`);
+    console.log(`3: Finished getting location`);
+  } catch (err) {
+    console.error(`2: ${err.message}`);
+  }
+})();
