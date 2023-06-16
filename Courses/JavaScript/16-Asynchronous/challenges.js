@@ -113,22 +113,56 @@ const createImage = function (imgPath) {
   });
 };
 
-createImage('img/img-1.jpg')
-  .then(() => {
+// createImage('img/img-1.jpg')
+//   .then(() => {
+//     console.log('Image 1 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('img/img-2.jpg');
+//   })
+//   .then(() => {
+//     console.log('Image 2 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('img/img-3.jpg');
+//   })
+//   .then(() => console.log('Image 3 loaded'))
+//   .catch(err => console.error(err));
+
+// Challenge #2
+const loadNPause = async function () {
+  try {
+    await createImage('img/img-1.jpg');
     console.log('Image 1 loaded');
-    return wait(2);
-  })
-  .then(() => {
+    await wait(2);
     currentImg.style.display = 'none';
-    return createImage('img/img-2.jpg');
-  })
-  .then(() => {
+    await createImage('img/img-2.jpg');
     console.log('Image 2 loaded');
-    return wait(2);
-  })
-  .then(() => {
+    await wait(2);
     currentImg.style.display = 'none';
-    return createImage('img/img-3.jpg');
-  })
-  .then(() => console.log('Image 3 loaded'))
-  .catch(err => console.error(err));
+    await createImage('img/img-3.jpg');
+    console.log('Image 3 loaded');
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// loadNPause();
+
+const imgArr = ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg'];
+
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async img => await createImage(img));
+    const imgsPromise = await Promise.all(imgs);
+    imgsPromise.forEach(img => img.classList.add('parallel'));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+loadAll(imgArr);
