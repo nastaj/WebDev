@@ -5,14 +5,14 @@
 // addToCart('bread', 5);
 // console.log(price, tq);
 
-// console.log('Importing module');
+console.log('Importing module');
 
 // import * as ShoppingCart from './shoppingCart.js';
 // ShoppingCart.addToCart('bread', 5);
 // console.log(ShoppingCart.totalPrice);
 
-// import add from './shoppingCart.js';
-// add('pizza', 2);
+import add from './shoppingCart.js';
+add('pizza', 2);
 // import { Item } from './shoppingCart.js';
 // const oranges = new Item('orange', 0.99, 10);
 // oranges.logDescription();
@@ -81,6 +81,8 @@
 
 // Lecture: Introduction to NPM
 import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from 'lodash-es';
+// import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
@@ -95,3 +97,7 @@ state.user.loggedIn = false;
 
 const stateDeepClone = cloneDeep(state);
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
