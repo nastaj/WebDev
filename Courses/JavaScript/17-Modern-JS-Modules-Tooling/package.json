@@ -1,18 +1,26 @@
 {
-  "name": "17-modern-js-modules-tooling",
+  "name": "modules",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modern JS",
+  "default": "index.html",
+  "browserslist": "last 2 versions, > 0.5%, ie >= 11",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
-  "author": "Jakub",
+  "author": "Student",
   "license": "ISC",
-  "dependencies": {
-    "leaflet": "^1.9.4",
-    "lodash-es": "^4.17.21"
-  },
   "devDependencies": {
-    "parcel": "^2.9.2"
+    "parcel": "^2.5.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "core-js": "^3.22.3",
+    "leaflet": "^1.8.0",
+    "lodash-es": "^4.17.21",
+    "regenerator-runtime": "^0.13.9"
   }
 }
